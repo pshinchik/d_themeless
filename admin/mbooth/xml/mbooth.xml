@@ -1,0 +1,17 @@
+
+
+<extension>
+    <id>mbooth</id>
+    <type>module</type>
+    <version>1.1</version>
+    <mbooth_version>1.1</mbooth_version>
+    <author>Dreamvention</author>
+    <files>
+		<file>admin/controller/module/mbooth.php</file>
+		<file>admin/language/english/module/mbooth.php</file>
+		<file>admin/view/template/module/mbooth.tpl</file>
+		<file>admin/mbooth/xml/mbooth.xml</file>
+        <file>catalog/controller/module/mbooth.php</file>
+        <file>image/data/mbooth/info.png</file>
+    </files>
+</extension>

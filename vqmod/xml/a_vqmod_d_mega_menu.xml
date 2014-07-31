@@ -1,0 +1,257 @@
+<modification>
+    <id>MEGA MENU BY DREAMVENTION</id>
+    <version>1.5.x</version>
+    <vqmver>2.2.1</vqmver>
+    <author>dreamvention.com</author>
+    <file name="admin/controller/module/*.php">
+        <operation> 
+            <search position="after">
+                 <![CDATA[ $this->data['layouts'] = $this->model_design_layout->getLayouts(); ]]>
+            </search>
+            <add>
+                <![CDATA[ $this->data['layouts'][] = array('layout_id'=>0, 'name' => 'All Pages' ); ]]>
+            </add>
+        </operation> 
+    </file>
+    <file name="/admin/model/setting/extension.php">
+        <operation>
+            <search position="before">
+                <![CDATA[
+                public function install($type, $code) {
+                ]]>
+            </search>
+            <add>
+                <![CDATA[
+                 public function installAllLayoutPage() {
+                        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "layout
+                            WHERE LOWER(name) like '%all pages%'
+                            LIMIT 1");
+                        if ($query->num_rows) {
+                            return $query->row['layout_id'];
+                        } else {
+                            $sql = "INSERT INTO ".DB_PREFIX."layout SET `name`='All Pages'";
+                            $query = $this->db->query( $sql );
+                            $layout_id = $this->db->getLastId();
+                            return $layout_id;
+                        }
+                        return 0;
+                }
+                ]]>
+            </add>
+        </operation>
+    </file>
+    <file name="/admin/controller/extension/module.php">
+        <operation>
+            <search position="after">
+                <![CDATA[
+                $this->load->model('setting/extension');
+                ]]>
+            </search>
+            <add>
+                <![CDATA[
+                $this->model_setting_extension->installAllLayoutPage();
+                ]]>
+            </add>
+        </operation>
+    </file>
+    
+    <file name="/catalog/model/design/layout.php">
+        <operation>
+            <search position="before">
+                <![CDATA[
+                public function getLayout($route) {
+                ]]>
+            </search>
+            <add>
+                <![CDATA[
+                public function getLayoutForAllPages()
+                {
+                    $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "layout
+                        WHERE LOWER(name) like '%all pages%'
+                        LIMIT 1");
+                    if ($query->num_rows) {
+                        return $query->row['layout_id'];
+                    } else {
+                        $sql = "INSERT INTO ".DB_PREFIX."layout SET `name`='All Pages'";
+                        $query = $this->db->query( $sql );
+                        $layout_id = $this->db->getLastId();
+                        return $layout_id;
+                    }
+                    return 0;
+                }
+                ]]>
+            </add>
+        </operation>
+    </file>
+    <file path="/catalog/controller/common/" name="column_left.php,column_right.php,content_top.php,content_bottom.php,column_mega_menu.php">
+        <operation>
+            <search position="before">
+                <![CDATA[
+                    $module_data = array();
+                ]]>
+            </search>
+            <add>
+                <![CDATA[
+                    $all_pages_layout_id = $this->model_design_layout->getLayoutForAllPages();
+                ]]>
+            </add>
+        </operation>
+    </file>
+    <file name="/catalog/controller/common/column_left.php">
+        <operation>
+            <search position="replace">
+                <![CDATA[
+                    if ($module['layout_id'] == $layout_id && $module['position'] == 'column_left' && $module['status']) {
+                ]]>
+            </search>
+            <add>
+                <![CDATA[
+                    if (($module['layout_id'] == $layout_id || $module['layout_id'] == $all_pages_layout_id || $module['layout_id'] == 0 || $module['layout_id'] == 9999) && isset($module['position']) && $module['position'] == 'column_left' && $module['status']) {
+                ]]>
+            </add>
+        </operation>
+    </file>
+    <file name="/catalog/controller/common/column_right.php">
+        <operation>
+            <search position="replace">
+                <![CDATA[
+                    if ($module['layout_id'] == $layout_id && $module['position'] == 'column_right' && $module['status']) {
+                ]]>
+            </search>
+            <add>
+                <![CDATA[
+                    if (($module['layout_id'] == $layout_id || $module['layout_id'] == $all_pages_layout_id || $module['layout_id'] == 0 || $module['layout_id'] == 9999) && isset($module['position']) && $module['position'] == 'column_right' && $module['status']) {
+                ]]>
+            </add>
+        </operation>
+    </file>
+    <file name="/catalog/controller/common/content_top.php">
+        <operation>
+            <search position="replace">
+                <![CDATA[
+                    if ($module['layout_id'] == $layout_id && $module['position'] == 'content_top' && $module['status']) {
+                ]]>
+            </search>
+            <add>
+                <![CDATA[
+                    if (($module['layout_id'] == $layout_id || $module['layout_id'] == $all_pages_layout_id || $module['layout_id'] == 0 || $module['layout_id'] == 9999) && isset($module['position']) && $module['position'] == 'content_top' && $module['status']) {
+                ]]>
+            </add>
+        </operation>
+    </file>
+    <file name="/catalog/controller/common/content_bottom.php">
+        <operation>
+            <search position="replace">
+                <![CDATA[
+                    if ($module['layout_id'] == $layout_id && $module['position'] == 'content_bottom' && $module['status']) {
+                ]]>
+            </search>
+            <add>
+                <![CDATA[
+                    if (($module['layout_id'] == $layout_id || $module['layout_id'] == $all_pages_layout_id || $module['layout_id'] == 0 || $module['layout_id'] == 9999) && isset($module['position']) && $module['position'] == 'content_bottom' && $module['status']) {
+                ]]>
+            </add>
+        </operation>
+    </file>
+     <file name="/catalog/controller/common/column_mega_menu.php">
+        <operation>
+            <search position="replace">
+                <![CDATA[
+                    if ($module['layout_id'] == $layout_id && $module['position'] == 'column_mega_menu' && $module['status']) {
+                ]]>
+            </search>
+            <add>
+                <![CDATA[
+                    if (($module['layout_id'] == $layout_id || $module['layout_id'] == $all_pages_layout_id || $module['layout_id'] == 0 || $module['layout_id'] == 9999) && isset($module['position']) && $module['position'] == 'column_mega_menu' && $module['status']) {
+                ]]>
+            </add>
+        </operation>
+    </file>
+    <file name="admin/language/*/*.php">
+        <operation>
+            <search position="after"><![CDATA[<?php]]></search>
+            <add><![CDATA[
+            /*EXTRA POSITIONS MegaMenu BY DREAMVENTION.COM*/
+            $_['text_column_mega_menu'] = 'Mega Menu';
+            ]]></add>
+        </operation>
+    </file>
+    <file name="admin/language/russian/russian.php" >
+        <operation error="skip">
+            <search position="after"><![CDATA[<?php]]></search>
+            <add><![CDATA[
+            /*EXTRA POSITIONS MegaMenu BY DREAMVENTION.COM*/
+            $_['text_column_mega_menu'] = 'Мега Меню';
+            ]]></add>
+        </operation>
+    </file>
+    <!--account-->
+    <file name="admin/view/template/module/*.tpl">
+        <operation error="skip">
+            <search position="before"><![CDATA[<?php if ($module['position'] == 'content_top') { ?>]]></search>
+            <add><![CDATA[
+            /*EXTRA POSITIONS MegaMenu BY DREAMVENTION.COM*/
+            <?php if ($module['position'] == 'column_mega_menu') { ?>
+                  <option value="column_mega_menu" selected="selected"><?php echo $text_column_mega_menu; ?></option>
+                  <?php } else { ?>
+                  <option value="column_mega_menu"><?php echo $text_column_mega_menu; ?></option>
+                  <?php } ?>              
+                  ]]></add>
+        </operation>
+    </file>
+    <file name="admin/view/template/module/*.tpl">
+        <operation error="skip">
+            <search position="before"><![CDATA[<option value="content_top"><?php echo $text_content_top; ?></option>';]]></search>
+            <add><![CDATA[
+            html += '      <option value="column_mega_menu"><?php echo $text_column_mega_menu; ?></option>';
+            ]]></add>
+        </operation>
+    </file>
+    <file name="admin/controller/module/*.php">
+        <operation error="skip">
+            <search position="before"><![CDATA[$this->data['text_column_right'] = $this->language->get('text_column_right');]]></search>
+            <add><![CDATA[
+            $this->data['text_column_mega_menu'] = $this->language->get('text_column_mega_menu');
+            ]]></add>
+        </operation>
+    </file>
+    <!--controllers-->
+    <file name="catalog/controller/*/*.php">
+        <operation error="skip">
+            <search position="after"><![CDATA[$this->children = array(]]></search>
+            <add><![CDATA[
+            'common/column_mega_menu',
+            ]]></add>
+        </operation>
+    </file>
+    <!--header-->
+    <file name="catalog/controller/common/header.php">
+        <operation error="skip">
+            <search position="after"><![CDATA[$this->data['categories'] = array();]]></search>
+            <add><![CDATA[
+            $this->children = array(
+            'common/column_mega_menu',
+        );
+            ]]></add>
+        </operation>
+    </file> 
+    <!--footer-->
+    <file name="catalog/controller/common/footer.php">
+        <operation error="skip">
+            <search position="before"><![CDATA[$this->render();]]></search>
+            <add><![CDATA[      $this->children = array(
+            'common/column_mega_menu',
+        );]]></add>
+        </operation>
+    </file> 
+    <file name="catalog/view/theme/*/template/common/header.tpl">
+        <operation>
+            <search position="after"><![CDATA[
+            <div id="notification"></div>
+            ]]></search>
+            <add><![CDATA[
+            <?php echo $column_mega_menu; ?>
+            ]]></add>
+        </operation>
+    </file> 
+</modification>

@@ -1,0 +1,25 @@
+<extension>
+    <id>Shopunity Admin Theme</id>
+    <type>theme</type>
+    <version>1.0</version>
+    <mbooth_version>1.0</mbooth_version>
+    <author>Dreamvention</author>
+    <files>
+		<file>admin/mbooth/xml/mbooth_shopunity_admin.xml</file>
+		
+		<!-- Test module -->
+		<file>admin/controller/module/shopunity.php</file>
+		<file>admin/language/english/module/shopunity.php</file>		
+		<file>admin/view/template/module/shopunity.tpl</file>
+		
+		<file>vqmod/xml/a_vqmod_shopunity_admin.xml</file>
+		
+    </files>
+	<dirs>
+		<dir>admin/view/javascript/shopunity</dir>
+		<dir>admin/view/stylesheet/shopunity</dir>
+		<dir>admin/view/image/shopunity</dir>
+		
+		<dir>system/library/hyperlight</dir>
+	</dirs>
+</extension>

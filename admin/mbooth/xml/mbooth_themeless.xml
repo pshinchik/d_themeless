@@ -1,0 +1,168 @@
+<extension>
+	<id>d_themeless</id>
+	<name>Themeless</name>
+	<description>A basic theme framwork for Dreamvention themes for opencart</description>
+	<type>themplate</type>
+	<version>1.0</version>
+	<opencart_version>1.5.6</opencart_version>
+	<mbooth_version>1.0</mbooth_version>
+	<author>Dreamvention</author>
+	<files>
+		<!-- admin -->
+		<file>admin/controller/module/dreamtheme.php</file>
+		<file>admin/language/english/module/dreamtheme.php</file>
+		<file>admin/view/template/module/dreamtheme.tpl</file>
+		
+		<!-- xml -->
+		<file>admin/mbooth/xml/mbooth_themeless.xml</file>
+		<!-- vqmod -->
+		<file>vqmod/xml/a_vqmod_themeless.xml</file>
+		<file>vqmod/xml/vqmod_extra_positions.xml</file>
+		
+
+		<!-- account -->
+		<file>catalog/view/theme/themeless/template/account/account.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/address_form.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/address_list.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/download.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/edit.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/forgotten.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/login.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/newsletter.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/order_info.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/order_list.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/password.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/register.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/return_form.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/return_info.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/return_list.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/reward.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/transaction.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/voucher.tpl</file>
+		<file>catalog/view/theme/themeless/template/account/wishlist.tpl</file>
+		
+		<!-- affiliate -->
+		<file>catalog/view/theme/themeless/template/affiliate/account.tpl</file>
+		<file>catalog/view/theme/themeless/template/affiliate/edit.tpl</file>
+		<file>catalog/view/theme/themeless/template/affiliate/forgotten.tpl</file>
+		<file>catalog/view/theme/themeless/template/affiliate/login.tpl</file>
+		<file>catalog/view/theme/themeless/template/affiliate/password.tpl</file>
+		<file>catalog/view/theme/themeless/template/affiliate/payment.tpl</file>
+		<file>catalog/view/theme/themeless/template/affiliate/register.tpl</file>
+		<file>catalog/view/theme/themeless/template/affiliate/tracking.tpl</file>
+		<file>catalog/view/theme/themeless/template/affiliate/transaction.tpl</file>
+		
+		<!-- checkout -->
+		<file>catalog/view/theme/themeless/template/checkout/cart.tpl</file>
+		<file>catalog/view/theme/themeless/template/checkout/checkout.tpl</file>
+		<file>catalog/view/theme/themeless/template/checkout/confirm.tpl</file>
+		<file>catalog/view/theme/themeless/template/checkout/guest.tpl</file>
+		<file>catalog/view/theme/themeless/template/checkout/guest_shipping.tpl</file>
+		<file>catalog/view/theme/themeless/template/checkout/login.tpl</file>
+		<file>catalog/view/theme/themeless/template/checkout/payment_address.tpl</file>
+		<file>catalog/view/theme/themeless/template/checkout/payment_method.tpl</file>
+		<file>catalog/view/theme/themeless/template/checkout/register.tpl</file>
+		<file>catalog/view/theme/themeless/template/checkout/shipping_address.tpl</file>
+		<file>catalog/view/theme/themeless/template/checkout/shipping_method.tpl</file>
+		
+		<!-- common -->
+		<file>catalog/view/theme/themeless/template/common/column_left.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/column_right.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/content_bottom.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/content_top.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/footer.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/header.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/home.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/maintenance.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/success.tpl</file>
+		
+		<!-- error -->
+		<file>catalog/view/theme/themeless/template/error/not_found.tpl</file>
+		
+		<!-- information -->
+		<file>catalog/view/theme/themeless/template/information/contact.tpl</file>
+		<file>catalog/view/theme/themeless/template/information/information.tpl</file>
+		<file>catalog/view/theme/themeless/template/information/sitemap.tpl</file>
+		
+		<!-- mail -->
+		<file>catalog/view/theme/themeless/template/mail/order.tpl</file>
+		<file>catalog/view/theme/themeless/template/mail/voucher.tpl</file>
+		
+		<!-- module -->
+		<file>catalog/view/theme/themeless/template/module/account.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/affiliate.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/banner.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/bestseller.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/carousel.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/cart.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/category.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/currency.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/featured.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/filter.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/google_talk.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/information.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/language.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/latest.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/slideshow.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/special.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/store.tpl</file>
+		<file>catalog/view/theme/themeless/template/module/welcome.tpl</file>
+		
+		<!-- product -->
+		<file>catalog/view/theme/themeless/template/product/category.tpl</file>
+		<file>catalog/view/theme/themeless/template/product/compare.tpl</file>
+		<file>catalog/view/theme/themeless/template/product/manufacturer_info.tpl</file>
+		<file>catalog/view/theme/themeless/template/product/manufacturer_list.tpl</file>
+		<file>catalog/view/theme/themeless/template/product/product.tpl</file>
+		<file>catalog/view/theme/themeless/template/product/review.tpl</file>
+		<file>catalog/view/theme/themeless/template/product/search.tpl</file>
+		<file>catalog/view/theme/themeless/template/product/special.tpl</file>	
+		
+		<!-- module infopage admin -->
+		<file>admin/controller/module/infopage.php</file>
+		<file>admin/language/english/module/infopage.php</file>
+		<file>admin/view/template/module/infopage.tpl</file>
+		
+		<!-- module infopage catalog -->
+		<file>catalog/controller/module/infopage.php</file>
+		<file>catalog/view/theme/default/template/module/infopage.tpl</file>
+		
+		<file>system/library/cart.php</file>
+		
+		
+		<!-- extra catalog -->
+		<file>catalog/controller/common/column_extra1.php</file>
+		<file>catalog/controller/common/column_extra2.php</file>
+		<file>catalog/controller/common/column_extra3.php</file>
+		<file>catalog/controller/common/column_extra4.php</file>
+		<file>catalog/controller/common/column_extra5.php</file>
+		<file>catalog/controller/common/column_extra6.php</file>
+		<file>catalog/controller/common/column_extra7.php</file>
+		<file>catalog/controller/common/column_extra8.php</file>
+		<file>catalog/controller/common/column_footer.php</file>
+		<file>catalog/controller/common/column_header.php</file>
+		
+		<file>catalog/view/theme/themeless/template/common/column_extra1.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/column_extra2.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/column_extra3.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/column_extra4.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/column_extra5.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/column_extra6.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/column_extra7.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/column_extra8.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/column_footer.tpl</file>
+		<file>catalog/view/theme/themeless/template/common/column_header.tpl</file>
+		
+	</files>
+	
+	<dirs>
+		<dir>catalog/view/javascript/themeless</dir>
+		<dir>catalog/view/theme/themeless/stylesheet</dir>
+		<dir>catalog/view/theme/themeless/image</dir>
+		<dir>catalog/view/theme/themeless/bootstrap/css</dir>
+		<dir>catalog/view/theme/themeless/bootstrap/js</dir>
+	</dirs>
+	<updates>
+		<update version="1.0"></update>
+	</updates>
+</extension>

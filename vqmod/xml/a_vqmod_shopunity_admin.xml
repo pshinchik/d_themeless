@@ -1,0 +1,47 @@
+<modification>
+	<id>SHOPUNITY ADMIN THEME BY DREAMVENTION</id>
+	<version>1.5.x</version>
+	<vqmver>2.2.1</vqmver>
+	<author>dreamvention.com</author>
+	<file name="admin/controller/common/header.php">
+		<operation>
+			<search position="after"><![CDATA[protected function index() {]]></search>
+			<add><![CDATA[
+			$this->document->addLink('//fonts.googleapis.com/css?family=PT+Sans:400,700,700italic,400italic&subset=latin,cyrillic-ext,latin-ext,cyrillic', "stylesheet");
+
+			
+			$this->document->addStyle('view/stylesheet/shopunity/normalize.css');
+			$this->document->addStyle('view/stylesheet/shopunity/icons.css');
+			$this->document->addStyle('view/javascript/shopunity/uniform/css/uniform.default.css');
+			$this->document->addStyle('view/javascript/shopunity/colorpicker/jquery.colorpicker.css');
+			$this->document->addStyle('view/stylesheet/shopunity/hyperlight.css');
+			$this->document->addStyle('view/stylesheet/shopunity/shopunity.css');
+	
+			$this->document->addScript('view/javascript/shopunity/uniform/jquery.uniform.min.js');
+			$this->document->addScript('view/javascript/shopunity/shopunity.js');
+			$this->document->addScript('view/javascript/shopunity/jquery.quicksearch.js');
+			$this->document->addScript('view/javascript/shopunity/jquery.nicescroll.min.js');
+			$this->document->addScript('view/javascript/shopunity/colorpicker/jquery.colorpicker.js');
+			$this->document->addScript('view/javascript/shopunity/jquery.nestable.js');
+			$this->document->addScript('view/javascript/shopunity/less.js');		
+			//$this->document->addScript('view/javascript/shopunity/charts_canvas/Chart.min.js');
+			$this->document->addScript('view/javascript/shopunity/charts_svg/crossfilter.min.js');
+			$this->document->addScript('view/javascript/shopunity/charts_svg/d3.min.js');
+			$this->document->addScript('view/javascript/shopunity/charts_svg/dc.min.js');	
+			]]></add>
+		</operation>
+	</file>
+	<file name="admin/view/template/common/login.tpl">
+		<operation>
+			<search position="replace"><![CDATA[<div id="content">]]></search>
+			<add><![CDATA[<div id="content" class="login">]]></add>
+		</operation>
+	</file>
+	<file name="admin/view/template/common/header.tpl">
+		<operation>
+			<search position="before"><![CDATA[<?php foreach ($scripts as $script) { ?>]]></search>
+			<add><![CDATA[<link href="view/stylesheet/shopunity/styles.less" rel="stylesheet/less">]]></add>
+		</operation>
+	</file>	
+	
+</modification>
